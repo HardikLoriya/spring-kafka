@@ -1,5 +1,11 @@
 # Microservices with Spring Boot and Kafka Demo Project
 
+Covered Topic :
+1. Kafka Consumer
+2. Kafka Producer
+3. Kafka Consumer Group
+4. Kafka Dead-Letter Queue
+
 ## Description
 There are three microservices: \
 `order-service` - it sends `Order` events to the Kafka topic and orchestrates the process of a distributed transaction \
