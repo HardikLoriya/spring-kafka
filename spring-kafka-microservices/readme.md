@@ -1,6 +1,6 @@
 # Microservices with Spring Boot and Kafka Demo Project
 
-Covered Topic :
+**Covered Topic** :
 1. Kafka Consumer
 2. Kafka Producer
 3. Kafka Consumer Group
