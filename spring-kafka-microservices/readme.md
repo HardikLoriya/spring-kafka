@@ -1,9 +1,4 @@
-# Microservices with Spring Boot and Kafka Demo Project [![Twitter](https://img.shields.io/twitter/follow/piotr_minkowski.svg?style=social&logo=twitter&label=Follow%20Me)](https://twitter.com/piotr_minkowski)
-
-## Articles
-This repository is used as the example for the following articles:
-1. [Distributed Transactions in Microservices with Kafka Streams and Spring Boot](https://piotrminkowski.com/2022/01/24/distributed-transactions-in-microservices-with-kafka-streams-and-spring-boot/) - how to implement distributed transaction based on the SAGA pattern with Spring Boot and Kafka Streams
-2. [Deep Dive into Saga Transactions with Kafka Streams and Spring Boot](https://piotrminkowski.com/2022/02/07/deep-dive-into-saga-transactions-with-kafka-streams-and-spring-boot/) - how to implement distributed transaction based on the SAGA pattern with Spring Boot and fully Kafka Streams `KStream` and `KTable`. You need to switch to the [streams-full](https://github.com/piomin/sample-spring-kafka-microservices/tree/streams-full) branch.
+# Microservices with Spring Boot and Kafka Demo Project
 
 ## Description
 There are three microservices: \
@@ -13,7 +8,7 @@ There are three microservices: \
 
 Here's the diagram with our architecture:
 
-![image](https://raw.githubusercontent.com/piomin/sample-spring-kafka-microservices/master/arch.png)
+![image](https://github.com/HardikLoriya/spring-kafka/blob/d69329e7bd470a5833ec8c4dd0c6dbb3be37e941/spring-kafka-microservices/arch.png)
 
 (1) `order-service` send a new `Order` -> `status == NEW` \
 (2) `payment-service` and `stock-service` receive `Order` and handle it by performing a local transaction on the data \
