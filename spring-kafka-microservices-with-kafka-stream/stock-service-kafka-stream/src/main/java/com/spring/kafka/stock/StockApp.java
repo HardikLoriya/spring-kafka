@@ -13,6 +13,7 @@ import org.springframework.kafka.annotation.DltHandler;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.annotation.RetryableTopic;
+import org.springframework.kafka.retrytopic.TopicSuffixingStrategy;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.retry.annotation.Backoff;
@@ -36,7 +37,7 @@ public class StockApp {
 	OrderManageService orderManageService;
 
 	@RetryableTopic(attempts = "4", backoff = @Backoff(delay = 1000, multiplier = 2.0), autoCreateTopics = "false")
-	@KafkaListener(id = "orders-stock-check", topics = "orders-stock-check", groupId = "orders-stock-check")
+	@KafkaListener(id = "orders", topics = "orders", groupId = "stock")
 	public void onEvent(Order o) {
 		LOG.info("Received: {}", o);
 		if(o.getSource().equals("DLQ Kafka")) {

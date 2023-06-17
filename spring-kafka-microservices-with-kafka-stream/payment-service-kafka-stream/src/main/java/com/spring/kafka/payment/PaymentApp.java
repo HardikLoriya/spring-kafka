@@ -30,7 +30,7 @@ public class PaymentApp {
     @Autowired
     OrderManageService orderManageService;
 
-    @KafkaListener(id = "orders-payment", topics = "orders-payment", groupId = "orders-payment")
+    @KafkaListener(id = "orders", topics = "orders", groupId = "payment")
     public void onEvent(Order o) {
         LOG.info("Received: {}" , o);
         if (o.getStatus().equals("NEW"))

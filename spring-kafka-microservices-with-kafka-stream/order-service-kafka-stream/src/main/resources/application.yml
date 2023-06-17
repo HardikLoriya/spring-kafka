@@ -4,15 +4,16 @@ spring.kafka:
   producer:
     key-serializer: org.apache.kafka.common.serialization.LongSerializer
     value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-  consumer:
-    key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
-    value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+  streams:
     properties:
-      spring.json.trusted.packages: "*"  
-
+      default.key.serde: org.apache.kafka.common.serialization.Serdes$LongSerde
+      default.value.serde: org.springframework.kafka.support.serializer.JsonSerde
+      spring.json.trusted.packages: "*"
+   
+#state-dir: /tmp/kafka-streams/
 logging.level.com.tech: INFO
 
-logging.level.root: WARN
+logging.level.*: WARN
 
 spring:
   datasource:

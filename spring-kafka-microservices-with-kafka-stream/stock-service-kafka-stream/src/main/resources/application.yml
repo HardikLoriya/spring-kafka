@@ -1,22 +1,22 @@
-spring.application.name: orders
+spring.application.name: stock
 spring.kafka:
   bootstrap-servers: localhost:9092
-  producer:
-    key-serializer: org.apache.kafka.common.serialization.LongSerializer
-    value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
   consumer:
     key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
     value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
     properties:
-      spring.json.trusted.packages: "*"  
+      spring.json.trusted.packages: "*"
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.LongSerializer
+    value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+spring.output.ansi.enabled: ALWAYS
 
 logging.level.com.tech: INFO
 
-logging.level.root: WARN
-
 spring:
   datasource:
-    url: jdbc:h2:mem:orderdetails
+    url: jdbc:h2:mem:stock
     driverClassName: org.h2.Driver
     username: sa
     password: password
@@ -24,7 +24,5 @@ spring:
     properties:
       hibernate: 
         dialect: org.hibernate.dialect.H2Dialect
-          
-spring.output.ansi.enabled: ALWAYS
 
 logging.pattern.console: "%clr(%d{HH:mm:ss.SSS}){blue} %clr(---){faint} %clr([%15.15t]){yellow} %clr(:){red} %clr(%m){faint}%n"

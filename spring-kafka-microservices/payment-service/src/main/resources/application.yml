@@ -23,7 +23,7 @@ spring:
        
 logging.level.com.tech: INFO
 
-logging.level.*: WARN
+logging.level.root: WARN
        
 spring.output.ansi.enabled: ALWAYS
 
